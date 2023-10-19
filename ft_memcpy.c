@@ -6,11 +6,14 @@
 /*   By: glima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:03:41 by glima             #+#    #+#             */
-/*   Updated: 2023/10/18 17:10:10 by glima            ###   ########.fr       */
+/*   Updated: 2023/10/19 16:22:12 by glima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	
+	ft_memmove(dest, src, n);
+	return (dest);
 }
