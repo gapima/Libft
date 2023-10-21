@@ -18,6 +18,8 @@ FLAGS = -Wall -Wextra -Werror
 
 HEADER = libft.h
 
+AR = ar -rcs
+
 SRC = ft_isalpha.c \
 		ft_isdigit.c \
 			ft_isalnum.c \
@@ -36,12 +38,10 @@ OBJECTS = $(SRC:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
+		$(AR) $(NAME) $(OBJECTS)
 
-%.o: %.c $(HEADER)
-		$(CC) $(FLAGS) -c $< -I $(HEADER) -o $@
-		ar -rsc $(NAME) $@
 clean:
-		rm -f $(OBJECTS) $@
+		rm -f $(OBJECTS)
 
 fclean: clean
 		rm -f $(NAME)
