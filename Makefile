@@ -6,7 +6,7 @@
 #    By: glima <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 16:46:54 by glima             #+#    #+#              #
-#    Updated: 2023/10/23 13:03:09 by gapima           ###   ########.fr        #
+#    Updated: 2023/10/24 17:43:11 by glima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,8 @@ SRC = ft_isalpha.c \
 			ft_memcmp.c \
 			ft_strnstr.c \
 			ft_atoi.c \
+			ft_calloc.c \
+			ft_strdup.c \
 
 OBJECTS = $(SRC:%.c=%.o)
 
