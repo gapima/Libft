@@ -6,7 +6,7 @@
 /*   By: gapima </var/spool/mail/gapima>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 19:58:03 by gapima            #+#    #+#             */
-/*   Updated: 2023/10/21 20:59:53 by gapima           ###   ########.fr       */
+/*   Updated: 2023/10/25 18:10:51 by glima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (unsigned char)c)
 			return (s);
 		s++;
 	}
-	if (*s == c)
+	if (*s == (unsigned char)c)
 		return (s);
 	return (NULL);
 }

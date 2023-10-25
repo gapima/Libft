@@ -6,7 +6,7 @@
 /*   By: gapima <gapima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:22:23 by gapima            #+#    #+#             */
-/*   Updated: 2023/10/23 15:22:07 by gapima           ###   ########.fr       */
+/*   Updated: 2023/10/25 18:23:56 by glima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *nptr)
 
 	sign = 1;
 	n = 0;
-	while (*nptr >= 7 && *nptr <= 13 || *nptr == 32)
+	while (*nptr >= 9 && *nptr <= 13 || *nptr == 32)
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
 	{

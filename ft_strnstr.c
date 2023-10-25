@@ -6,7 +6,7 @@
 /*   By: gapima <gapima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/22 15:36:02 by gapima            #+#    #+#             */
-/*   Updated: 2023/10/23 13:56:19 by gapima           ###   ########.fr       */
+/*   Updated: 2023/10/25 18:40:11 by glima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,21 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i;
-	size_t	big_len;
-	size_t	little_len;
+	size_t	b;
+	size_t	l;
 
-	big_len = ft_strlen(big);
-	little_len = ft_strlen(little);
-	if (*little == 0)
+	b = 0;
+	l = 0;
+	if (!little[l])
 		return ((char *)big);
-	if (len == 0)
-		return (NULL);
-	i = 0;
-	while (little[i] && i < len)
-		i++;
-	while (*big && len >= i)
+	while (big[b] && b < len)
 	{
-		if (*big == i && len >= i && big_len < little_len
-			&& ft_strncmp(big, little, i) == 0)
-			return ((char *)big);
-		if (*big == *little && big_len >= little_len
-			&& (i == 1 || ft_memcmp(big, little, i) == 0))
-			return ((char *)big);
-		big++;
-		len--;
+		l = 0;
+		while ((little[l] == big[b + l] && little[l]) && l + b < len)
+			l++;
+		if (!little[l])
+			return ((char *)&big[b]);
+		b++;
 	}
 	return (NULL);
 }
