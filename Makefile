@@ -6,7 +6,7 @@
 #    By: glima <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/20 16:46:54 by glima             #+#    #+#              #
-#    Updated: 2023/10/24 17:43:11 by glima            ###   ########.fr        #
+#    Updated: 2023/10/31 15:50:09 by glima            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,10 @@ SRC = ft_isalpha.c \
 			ft_atoi.c \
 			ft_calloc.c \
 			ft_strdup.c \
+			ft_substr.c \
+			ft_strjoin.c \
+			ft_strtrim.c \
+			ft_split.c \
 
 OBJECTS = $(SRC:%.c=%.o)
 
