@@ -5,92 +5,56 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: glima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 16:37:21 by glima             #+#    #+#             */
-/*   Updated: 2023/11/02 18:08:36 by glima            ###   ########.fr       */
+/*   Created: 2023/11/08 13:02:26 by glima             #+#    #+#             */
+/*   Updated: 2023/11/08 13:19:47 by glima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
+static char	**ft_div_words(char **str, size_t size, char *s, char c)
+{
+	size_t	count;
+	size_t	cw;
+	size_t	temp;
+
+	count = 0;
+	cw = 0;
+	while (cw < size)
+	{
+		while (s[count] == c)
+			count++;
+		temp = count;
+		while (s[temp] != c && s[temp] != '\0')
+			temp++;
+		str[cw] = malloc(sizeof(char) * (temp - count + 1));
+		ft_memcpy((void *)str[cw], (const void *)&s[count], temp - count);
+		str[cw][temp - count] = '\0';
+		count = temp;
+		cw++;
+	}
+	str[cw] = NULL;
+	return (str);
+}
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
-	int		i;
-	int		x;
-	int		y;
+	char	**str;
+	size_t	i;
+	size_t	size;
 
-	i = 0;
-	x = 0;
-	y = 0;
-	while (s[i] != '\0')
+	if (s == NULL)
+		return (NULL);
+	i = -1;
+	size = 0;
+	while (s[++i] != '\0')
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
-			x++;
-		i++;
+			size++;
 	}
-	result = malloc(sizeof(char *) * (x + 1));
-	if (result == NULL)
+	str = malloc(sizeof(char *) * (size + 1));
+	if (str == NULL)
 		return (NULL);
-	i = 0;
-	x = 0;
-	while (s[i] != '\0')
-	{
-		while (s[i] != c && s[i] != '\0')
-		{
-			y++;
-			i++;
-		}
-		if (y > 0)
-		{
-			result[x] = malloc(y + 1);
-			y = 0;
-			if (result[x] == NULL)
-			{
-				while (y < x)
-					free(result[y++]);
-				free(result);
-				return (NULL);
-			}
-			x++;
-		}
-		if (s[i] == '\0')
-			break;
-		i++;
-	}
-	x = 0;
-	y = 0;
-	i = 0;
-	while (s[i])
-	{
-		while (s[i] != c && s[i])
-		{	
-			result[x][y] = s[i];
-			i++;
-			y++;
-		}
-		if (y > 0)
-		{
-			result[x][y] = '\0';
-			x++;
-		}
-		if (s[i] == '\0')
-			break;
-		i++;
-		y = 0;
-	}
-	result[x] = NULL;
-	return (result);
+	str = ft_div_words(str, size, (char *)s, c);
+	return (str);
 }
-
-// int main()
-// {
-// 	char **s = ft_split("ab  de  fg  ewr  t", ' ');
-// 	int x = 0;
-// 	while (s[x])
-// 	{
-// 		printf("%s\n",s[x]);
-// 		x++;
-// 	}
-// 	return 0;
-// }
