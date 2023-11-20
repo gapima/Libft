@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 14:44:00 by glima             #+#    #+#             */
-/*   Updated: 2023/11/09 18:18:57 by glima            ###   ########.fr       */
+/*   Created: 2023/11/17 15:03:43 by glima             #+#    #+#             */
+/*   Updated: 2023/11/17 15:08:50 by glima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*array;
-	size_t	full_size;
+	t_list	*temp;
+	t_list	*new;
+	t_list	*map;
 
-	full_size = size * nmemb;
-	if (full_size != 0 && full_size / size != nmemb)
+	if (lst == NULL)
 		return (NULL);
-	array = malloc(full_size);
-	if (array == NULL)
-		return (NULL);
-	ft_bzero(array, full_size);
-	return (array);
+	map = NULL;
+	temp = lst;
+	while (temp != NULL)
+	{
+		new = ft_lstnew(f(temp->content));
+		if (new != NULL)
+			ft_lstadd_back(&map, new);
+		else
+			ft_lstclear(&new, del);
+		temp = temp->next;
+	}
+	return (map);
 }
