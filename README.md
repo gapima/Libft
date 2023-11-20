@@ -6,7 +6,7 @@
 	<h2>
 		<i>libft</i>
 	</h2>
-	<img src= alt=libft badge/>
+	<img src=https://github.com/gapima/Libft/assets/71856172/9adf2837-90cd-47fd-bb69-bbbfe74cb570 alt=libft badge/>
 	<p align=center>
     		Inside this repository, you can see all the code that has been created for the libft project, including the mandatory parts 1 and 2 as well as the bonus functions. These functions must be compiled into a library named libft.a using a Makefile.
 	</p>
@@ -18,7 +18,7 @@
 	<h2>
 		Final score
 	</h2>
-	<img src=https://github.com/gapima/Libft/assets/115947494/5e0ec418-05ec-4dae-9924-f8ae828cae22 alt=libft grade/>
+	<img src=https://github.com/gapima/Libft/assets/71856172/37b2712f-5d11-49c8-a22d-dd829c3293e7 alt=libft grade/>
 </div>
 
 ---
