@@ -86,15 +86,15 @@
 
 | Function | Description |
 | :--- | :--- |
-| [lstnew](https://github.com/gapima/Libft/blob/main/functions/ft_lstnew.c) | Create a new node |
-| [lstadd_front](https://github.com/gapima/Libft/blob/main/functions/ft_lstadd_front.c) | Add a node in front of a list |
-| [lstsize](https://github.com/gapima/Libft/blob/main/functions/ft_lstsize.c) | Count the nodes in a list |
-| [lstlast](https://github.com/gapima/Libft/blob/main/functions/ft_lstlast.c) | Return the last node of a list |
-| [lstadd_back](https://github.com/gapima/Libft/blob/main/functions/ft_lstadd_back.c) | Add a node in the end of a list |
-| [lstdelone](https://github.com/gapima/Libft/blob/main/functions/ft_lstdelone.c) | Free the content os a node in a list |
-| [lstclear](https://github.com/gapima/Libft/blob/main/functions/ft_lstclear.c) | Delete and free a list |
-| [lstiter](https://github.com/gapima/Libft/blob/main/functions/ft_lstiter.c) | Apply a function to every node of a list |
-| [lstmap](https://github.com/gapima/Libft/blob/main/functions/ft_lstmap.c) | Apply a function to every node of a list |
+| [lstnew](https://github.com/gapima/Libft/blob/main/functions/ft_lstnew_bonus.c) | Create a new node |
+| [lstadd_front](https://github.com/gapima/Libft/blob/main/functions/ft_lstadd_front_bonus.c) | Add a node in front of a list |
+| [lstsize](https://github.com/gapima/Libft/blob/main/functions/ft_lstsize_bonus.c) | Count the nodes in a list |
+| [lstlast](https://github.com/gapima/Libft/blob/main/functions/ft_lstlast_bonus.c) | Return the last node of a list |
+| [lstadd_back](https://github.com/gapima/Libft/blob/main/functions/ft_lstadd_back_bonus.c) | Add a node in the end of a list |
+| [lstdelone](https://github.com/gapima/Libft/blob/main/functions/ft_lstdelone_bonus.c) | Free the content os a node in a list |
+| [lstclear](https://github.com/gapima/Libft/blob/main/functions/ft_lstclear_bonus.c) | Delete and free a list |
+| [lstiter](https://github.com/gapima/Libft/blob/main/functions/ft_lstiter_bonus.c) | Apply a function to every node of a list |
+| [lstmap](https://github.com/gapima/Libft/blob/main/functions/ft_lstmap_bonus.c) | Apply a function to every node of a list |
 
 ---
 
